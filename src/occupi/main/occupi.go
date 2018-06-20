@@ -120,6 +120,7 @@ func handleReset(button, indInput, indOpen, indLock rpio.Pin, refresh time.Durat
         indOpen.Low()
         indLock.Low()
         indInput.Low()
+        updateLockState(UNKNOWN)
       case rpio.Low:
         if DEBUG || VERBOSE {
           fmt.Println(">>> BUTTON UP")
